@@ -13,8 +13,7 @@ body {
 
 .phone-frame {
     width: 375px; 
-    /* تم تقليل الارتفاع الأدنى (min-height) قليلاً ليتناسب مع المحتوى الأقصر */
-    min-height: 600px; 
+    min-height: 600px; /* يمكن تعديل هذا الارتفاع حسب الحاجة */
     background-color: #fff;
     border-radius: 30px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
@@ -35,24 +34,28 @@ body {
     color: #444;
 }
 
+/* حل مشكلة الصورة وتنسيقها */
 .profile-picture {
     width: 100px;
     height: 100px;
     border-radius: 50%;
+    /* خلفية سوداء احتياطية إذا لم تظهر الصورة */
     background-color: #000; 
     margin: 0 auto 15px;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden; 
-    border: 1px solid #333; 
+    border: 2px solid #ddd; /* إطار خفيف حول الصورة */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* ظل خفيف */
 }
 
 .profile-picture img {
     width: 100%;
     height: 100%;
-    object-fit: cover; 
-    border-radius: 50%; 
+    object-fit: cover; /* لضمان ملء الصورة للدائرة بشكل جيد */
+    border-radius: 50%; /* لجعل الصورة نفسها دائرية داخل العنصر الأب */
+    display: block; /* يزيل أي مسافة إضافية أسفل الصورة */
 }
 
 h1 {
@@ -79,29 +82,121 @@ h1 {
     color: #000;
 }
 
-.social-icons-group {
+/* تنسيق مجموعة الأزرار الجديدة ( stacked buttons ) */
+.social-buttons-group {
     display: flex;
-    justify-content: center;
+    flex-direction: column; /* لجعل الأزرار مكدسة عموديًا */
+    align-items: center; /* توسيط الأزرار أفقيًا */
+    gap: 15px; /* المسافة بين كل زر */
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.social-button {
+    display: flex;
     align-items: center;
-    gap: 20px; 
-    margin-bottom: 30px; 
-    margin-top: 20px; 
+    justify-content: center;
+    width: 90%; /* عرض الزر */
+    max-width: 300px; /* أقصى عرض للزر */
+    padding: 12px 20px;
+    border-radius: 12px; /* حواف دائرية للبوكس */
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff; /* لون النص الافتراضي */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* ظل خفيف */
+    transition: all 0.3s ease; /* تأثير احترافي عند التفاعل */
+    position: relative;
+    overflow: hidden;
 }
 
-.social-icons-group a {
-    font-size: 35px; 
-    color: #333; 
-    transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+.social-button i {
+    font-size: 22px;
+    margin-left: 10px; /* مسافة بين الأيقونة والنص (يمين الأيقونة في RTL) */
+    position: relative;
+    z-index: 2; /* لجعل الأيقونة فوق تأثير الخلفية */
 }
 
-.social-icons-group a:hover {
-    transform: scale(1.1); 
-    color: #ff9900; 
+.social-button span {
+    position: relative;
+    z-index: 2; /* لجعل النص فوق تأثير الخلفية */
 }
 
-.social-icons-group .fa-tiktok:hover { color: #000; } 
-.social-icons-group .fa-snapchat-ghost:hover { color: #FFFC00; } 
-.social-icons-group .fa-whatsapp:hover { color: #25D366; } 
+/* تأثير الموشن جرافيك (احترافي) */
+.social-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2); /* تأثير تظليل خفيف */
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.4s ease, height 0.4s ease;
+    z-index: 1;
+}
 
-/* تم حذف جميع التنسيقات السفلية هنا */
-/* .footer-links, .footer-links a, .footer-links .dot */
+.social-button:hover::before {
+    width: 200%; /* يكبر التظليل لملء الزر */
+    height: 200%;
+}
+
+.social-button:hover {
+    transform: translateY(-3px); /* حركة بسيطة للأعلى عند التمرير */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* ظل أوضح */
+}
+
+
+/* ألوان التطبيقات الرسمية */
+.tiktok-btn {
+    background: linear-gradient(to right, #000000, #222222); /* تدرج أسود */
+    color: #fff;
+}
+.tiktok-btn:hover {
+    background: linear-gradient(to right, #000000, #444444);
+}
+
+
+.snapchat-btn {
+    background-color: #FFFC00; /* أصفر سناب شات */
+    color: #333; /* لون نص غامق */
+    box-shadow: 0 4px 15px rgba(255, 252, 0, 0.3);
+}
+.snapchat-btn:hover {
+    background-color: #FFE500;
+    color: #000;
+}
+/* لتلوين الأيقونة نفسها بالأسود في سناب شات */
+.snapchat-btn i {
+    color: #333;
+}
+.snapchat-btn:hover i {
+    color: #000;
+}
+
+
+.whatsapp-btn {
+    background: linear-gradient(to right, #25D366, #128C7E); /* تدرج أخضر واتساب */
+    color: #fff;
+}
+.whatsapp-btn:hover {
+    background: linear-gradient(to right, #1DA852, #0E786B);
+}
+
+/* يمكن حذف الروابط السفلية لأنها غير موجودة في HTML */
+/* .footer-links {
+    margin-top: 50px; 
+    font-size: 12px;
+    color: #999;
+}
+
+.footer-links a {
+    color: #999;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.footer-links .dot {
+    margin: 0 5px;
+} */
