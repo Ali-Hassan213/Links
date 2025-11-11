@@ -11,7 +11,6 @@ body {
     text-align: center;
 }
 
-/* إطار الهاتف الذي يحوي المحتوى */
 .phone-frame {
     width: 375px; 
     min-height: 700px;
@@ -27,7 +26,6 @@ body {
     padding: 20px 0;
 }
 
-/* النجمة في الزاوية */
 .star-icon {
     position: absolute;
     top: 20px;
@@ -36,7 +34,6 @@ body {
     color: #444;
 }
 
-/* الصورة الشخصية/الشعار */
 .profile-picture {
     width: 100px;
     height: 100px;
@@ -49,7 +46,6 @@ body {
     border: 1px solid #333; 
 }
 
-/* Placeholder للشعار النصي المؤقت */
 .logo-placeholder {
     font-size: 14px;
     color: gold;
@@ -68,7 +64,7 @@ h1 {
     color: #555;
     line-height: 1.6;
     margin-bottom: 20px;
-    padding: 0 15px; /* إضافة تباعد لليمين واليسار */
+    padding: 0 15px; 
 }
 
 .description-text p {
@@ -80,14 +76,12 @@ h1 {
     color: #000;
 }
 
-/* أيقونة TikTok */
 .social-icon {
     font-size: 28px;
     color: #333;
     margin-bottom: 10px;
 }
 
-/* تنسيق الأزرار المشترك */
 .profile-button {
     display: flex;
     justify-content: center;
@@ -103,7 +97,6 @@ h1 {
     transition: background-color 0.3s;
 }
 
-/* زر TikTok */
 .tiktok-button {
     background-color: #f2f2f2;
     color: #333;
@@ -113,20 +106,15 @@ h1 {
 
 .tiktok-button .dots {
     position: absolute;
-    right: 20px; /* تم تعديله ليتناسب مع اتجاه RTL */
+    right: 20px; 
     font-size: 20px;
     line-height: 1;
 }
 
-/* زر Linktree */
-.linktree-button {
-    background-color: #ff9900; 
-    color: #fff;
-    box-shadow: 0 4px 10px rgba(255, 153, 0, 0.4);
-}
+/* تم حذف تنسيقات زر .linktree-button هنا */
 
 .footer-links {
-    margin-top: 50px;
+    margin-top: 50px; /* ربما تحتاج لتعديل هذا ليرتفع قليلاً بعد حذف الزر */
     font-size: 12px;
     color: #999;
 }
