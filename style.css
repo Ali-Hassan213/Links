@@ -6,17 +6,23 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #f0f0f0; 
     direction: rtl; 
     text-align: center;
+    
+    /* --- الخلفية الجديدة --- */
+    background-image: url('background-image.jpg'); /* تأكد من اسم ملف الصورة */
+    background-size: cover; /* لتغطية الخلفية بالكامل */
+    background-position: center; /* توسيط الخلفية */
+    background-attachment: fixed; /* لتثبيت الخلفية عند التمرير */
+    background-color: #f0f0f0; /* لون احتياطي إذا لم يتم تحميل الصورة */
 }
 
 .phone-frame {
     width: 375px; 
     min-height: 600px;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.9); /* خلفية بيضاء شبه شفافة لإطار الهاتف */
     border-radius: 30px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2); /* ظل أوضح قليلاً */
     padding: 20px;
     position: relative;
     overflow: hidden; 
@@ -26,20 +32,21 @@ body {
     padding: 20px 0;
 }
 
-.star-icon {
+/* تم حذف تنسيقات النجمة من هنا */
+/* .star-icon {
     position: absolute;
     top: 20px;
     left: 20px;
     font-size: 24px;
     color: #444;
-}
+} */
 
-/* تنسيق الصورة الشخصية */
+/* تنسيق الصورة الشخصية - حل مشكلة الظهور */
 .profile-picture {
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    background-color: #000; 
+    /* تم إزالة background-color: #000; لأن الصورة ستملأها */
     margin: 0 auto 15px;
     display: flex;
     justify-content: center;
@@ -76,10 +83,11 @@ h1 {
     margin: 5px 0;
 }
 
-.phone-number {
+/* لا يوجد رقم هاتف ظاهر الآن في الوصف، لذا يمكن إزالة هذا التنسيق أو تركه كاحتياطي */
+/* .phone-number {
     font-weight: 700;
     color: #000;
-}
+} */
 
 /* تنسيق مجموعة الأزرار (Stacked Buttons) */
 .social-buttons-group {
