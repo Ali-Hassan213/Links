@@ -173,3 +173,25 @@ h1 {
 .whatsapp-btn:hover {
     background: linear-gradient(to right, #1DA852, #0E786B);
 }
+/* تنسيق زر الحجز الجديد المميز */
+.main-booking-button {
+    display: block;
+    text-align: center;
+    padding: 15px 20px;
+    margin: 15px auto 10px auto; /* توسيط مع مسافة */
+    width: 90%;
+    max-width: 350px;
+    border-radius: 10px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: white; /* نص أبيض */
+    background-color: #ff5722; /* لون برتقالي جذاب للحجز */
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(255, 87, 34, 0.4);
+    transition: background-color 0.3s;
+}
+
+.main-booking-button:hover {
+    background-color: #e64a19;
+}
+
