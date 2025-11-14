@@ -9,9 +9,7 @@ body {
     direction: rtl; 
     text-align: center;
     
-    /* --- الخلفية الجديدة --- */
-    /* إذا أردت استخدام صورة خلفية، يجب رفعها على GitHub أيضاً باسم background-image.jpg */
-    /* يمكنك إزالة هذه الأسطر إذا لم يكن لديك صورة خلفية عامة */
+    /* خلفية الموقع */
     background-image: url('background-image.jpg'); 
     background-size: cover;
     background-position: center;
@@ -22,7 +20,7 @@ body {
 .phone-frame {
     width: 375px; 
     min-height: 600px;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.9); /* خلفية بيضاء شبه شفافة */
     border-radius: 30px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2); 
     padding: 20px;
@@ -33,8 +31,6 @@ body {
 .profile-container {
     padding: 20px 0;
 }
-
-/* تم حذف تنسيقات النجمة */
 
 /* تنسيق الصورة الشخصية */
 .profile-picture {
@@ -77,6 +73,7 @@ h1 {
     margin: 5px 0;
 }
 
+/* تنسيق مجموعة الأزرار المكدسة */
 .social-buttons-group {
     display: flex;
     flex-direction: column;
@@ -173,19 +170,20 @@ h1 {
 .whatsapp-btn:hover {
     background: linear-gradient(to right, #1DA852, #0E786B);
 }
+
 /* تنسيق زر الحجز الجديد المميز */
 .main-booking-button {
     display: block;
     text-align: center;
     padding: 15px 20px;
-    margin: 15px auto 10px auto; /* توسيط مع مسافة */
+    margin: 15px auto 10px auto;
     width: 90%;
     max-width: 350px;
     border-radius: 10px;
     font-size: 1.1em;
     font-weight: bold;
-    color: white; /* نص أبيض */
-    background-color: #ff5722; /* لون برتقالي جذاب للحجز */
+    color: white; 
+    background-color: #ff5722; 
     text-decoration: none;
     box-shadow: 0 4px 10px rgba(255, 87, 34, 0.4);
     transition: background-color 0.3s;
@@ -195,9 +193,10 @@ h1 {
     background-color: #e64a19;
 }
 
+
 /* تنسيق النافذة المنبثقة (Modal) */
 .modal {
-    display: none; /* إخفاء النافذة افتراضياً */
+    display: none; 
     position: fixed; 
     z-index: 1000;
     left: 0;
@@ -247,7 +246,9 @@ h1 {
 
 .modal-content input[type="text"],
 .modal-content input[type="date"],
-.modal-content select {
+.modal-content select,
+.modal-content input[type="number"],
+.modal-content input[type="time"] {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
